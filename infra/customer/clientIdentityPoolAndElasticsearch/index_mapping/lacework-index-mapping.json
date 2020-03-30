@@ -1,0 +1,21 @@
+{
+  "mappings": {
+    "type": {
+      "properties": {
+        "lacework_entity_map": {
+          "type": "object",
+          "properties": {
+            "Resource": {
+              "type": "nested",
+              "properties": {
+                "VALUE": {
+                  "type": "text"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

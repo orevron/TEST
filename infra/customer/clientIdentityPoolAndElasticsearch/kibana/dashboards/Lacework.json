@@ -1,0 +1,452 @@
+{
+  "version": "6.4.2",
+  "objects": [
+    {
+      "id": "7566f6b0-6f36-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 3,
+      "attributes": {
+        "title": "Lacework - Histogram",
+        "visState": "{\"title\":\"Lacework - Histogram\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Events\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Events\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Events\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"start_time\",\"interval\":\"h\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time & Date\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"lacework_source.keyword\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "088e03c0-6f37-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 4,
+      "attributes": {
+        "title": "Lacework - Event Severity",
+        "visState": "{\"title\":\"Lacework - Event Severity\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":1000}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"lacework_severity.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"colors\":{\"4\":\"#EF843C\",\"5\":\"#BF1B00\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "bc631d00-6f36-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 4,
+      "attributes": {
+        "title": "Lacework - Event Types",
+        "visState": "{\"title\":\"Lacework - Event Types\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"lacework_event_name.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Event Type\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#447EBC\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "cc0f25e0-6f37-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 1,
+      "attributes": {
+        "title": "Lacework - CIS Violations",
+        "visState": "{\"title\":\"Lacework - CIS Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"CIS Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "dde00960-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "2a042bd0-6f3f-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 1,
+      "attributes": {
+        "title": "Lacework - S3 Violations",
+        "visState": "{\"title\":\"Lacework - S3 Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"S3 Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "082f4b50-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "5cbe29e0-6f3f-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "Lacework - AWS General Violations",
+        "visState": "{\"title\":\"Lacework - AWS General Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"General Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "1dcb8550-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "d7d8ea80-6f43-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 3,
+      "attributes": {
+        "title": "Lacework - Networking Violations",
+        "visState": "{\"title\":\"Lacework - Networking Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Networking Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "910c3870-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "b69bc840-6f45-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 1,
+      "attributes": {
+        "title": "Lacework - IAM Violations",
+        "visState": "{\"title\":\"Lacework - IAM Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"IAM Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "81e807c0-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "cc4b6330-6f45-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-05T14:55:18.243Z",
+      "version": 1,
+      "attributes": {
+        "title": "Lacework - Serverless Violations",
+        "visState": "{\"title\":\"Lacework - Serverless Violations\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Serverless Violations\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "savedSearchId": "fd031350-6f1e-11e9-beee-e3bd9c9d6b0a",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "a9373700-6f47-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "Lacework - account ids",
+        "visState": "{\"title\":\"Lacework - account ids\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":15,\"maxFontSize\":35,\"showLabel\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"AWS Accounts\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"lacework_entity_map_CT_User_0_ACCOUNT_ID.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Account Ids\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "d9d32e50-6f0b-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 8,
+      "attributes": {
+        "title": "Lacework - Alert Details",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "lacework_event_name",
+          "lacework_summary",
+          "lacework_event_id",
+          "lacework_source",
+          "lacework_severity",
+          "lacework_entity_map.SourceIpAddress",
+          "lacework_link"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"\"\n  },\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": true,\n        \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n        \"type\": \"phrase\",\n        \"key\": \"lacework_event_type\",\n        \"value\": \"NewViolations\",\n        \"params\": {\n          \"query\": \"NewViolations\",\n          \"type\": \"phrase\"\n        },\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_event_type\": {\n            \"query\": \"NewViolations\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    },\n    {\n      \"meta\": {\n        \"negate\": true,\n        \"index\": \"ec1e2150-6dd5-11e9-beee-e3bd9c9d6b0a\",\n        \"type\": \"phrase\",\n        \"key\": \"lacework_event_type\",\n        \"value\": \"ComplianceChanged\",\n        \"params\": {\n          \"query\": \"ComplianceChanged\",\n          \"type\": \"phrase\"\n        },\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_event_type\": {\n            \"query\": \"ComplianceChanged\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "id": "52766170-6f1f-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 3,
+      "attributes": {
+        "title": "Lacework - Violation Details",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "lacework_event_name",
+          "lacework_summary",
+          "lacework_event_id",
+          "lacework_source",
+          "lacework_severity",
+          "lacework_entity_map.ViolationReason",
+          "lacework_link"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"\"\n  },\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": false,\n        \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n        \"type\": \"phrase\",\n        \"key\": \"lacework_source\",\n        \"value\": \"Compliance\",\n        \"params\": {\n          \"query\": \"Compliance\",\n          \"type\": \"phrase\"\n        },\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_source\": {\n            \"query\": \"Compliance\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"appState\"\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "id": "ce287aa0-6fd4-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "CloudTrail Events",
+        "visState": "{\"title\":\"CloudTrail Events\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Noticeable CloudTrail Events\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"lacework_source\",\"value\":\"CloudTrail\",\"params\":{\"query\":\"CloudTrail\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"lacework_source\":{\"query\":\"CloudTrail\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        }
+      }
+    },
+    {
+      "id": "305a5600-6fd3-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "Top Users",
+        "visState": "{\"title\":\"Top Users\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"_id\",\"customLabel\":\"#Issues\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_CT_User_0_USERNAME.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"User ID\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_SourceIpAddress_0_CITY.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Location\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_CT_User_0_MFA\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"MFA Enabled\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_API_0_SERVICE.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Services\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":4,\"direction\":\"desc\"}}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "d66b0030-6fd3-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "Top Resources",
+        "visState": "{\"title\":\"Top Resources\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMetricsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"_id\",\"customLabel\":\"#Issues\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_Resource_0_NAME.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Type\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lacework_entity_map_Resource_0_VALUE.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Name\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":2,\"direction\":\"desc\"}}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\"negate\":true,\"type\":\"phrase\",\"key\":\"lacework_entity_map_Resource_0_NAME.keyword\",\"value\":\"Permission\",\"params\":{\"query\":\"Permission\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"lacework_entity_map_Resource_0_NAME.keyword\":{\"query\":\"Permission\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        }
+      }
+    },
+    {
+      "id": "7a3291f0-70ca-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 1,
+      "attributes": {
+        "title": "Quick Start : Lacework",
+        "visState": "{\"title\":\"Quick Start : Lacework\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"### Quick Start : Lacework\\n\\nLacework is a SaaS platform that provides automated threat defense, intrusion detection, and compliance for multicloud workloads & containers.\\n\\nBridgeCrew deployed Lacework's AWS Compliance module to provide insights into existing violations. Lacework will monitor and alert any time a configuration goes out of compliance.\\n\\nTo begin to investigate a resource that has gone out-of-compliance, pivot to our [CloudTrail Investigation](#/dashboard/f42ba2f0-6f2e-11e9-beee-e3bd9c9d6b0a?_g=(refreshInterval:(pause:!t,value:0),time:(from:now-7d,mode:quick,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:11,i:'1',w:35,x:13,y:7),id:'62665020-6f2b-11e9-beee-e3bd9c9d6b0a',panelIndex:'1',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:18,i:'2',w:13,x:0,y:0),id:'13125ca0-6f2e-11e9-beee-e3bd9c9d6b0a',panelIndex:'2',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'3',w:8,x:31,y:0),id:b6087d30-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'3',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'4',w:9,x:13,y:0),id:'097cee10-6f2b-11e9-beee-e3bd9c9d6b0a',panelIndex:'4',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'5',w:9,x:39,y:0),id:cb2722c0-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'5',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'6',w:9,x:22,y:0),id:eb4ca890-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'6',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:13,i:'7',w:48,x:0,y:18),id:'08e844a0-6f2a-11e9-beee-e3bd9c9d6b0a',panelIndex:'7',type:search,version:'6.4.2')),query:(language:lucene,query:''),timeRestore:!f,title:'Investigate%20CloudTrail',viewMode:view)) dashboard to drill-down into a specific resource and its history.\"},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "769e7730-6f34-11e9-beee-e3bd9c9d6b0a",
+      "type": "index-pattern",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 6,
+      "attributes": {
+        "title": "*lacework-events*",
+        "timeFieldName": "start_time",
+        "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"end_time\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_account\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_account.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_API_0_API\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_API_0_API.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_API_0_SERVICE\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_API_0_SERVICE.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_ACCOUNT_ID\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_ACCOUNT_ID.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_0\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_0.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_1\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_1.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_10\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_10.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_11\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_11.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_12\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_12.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_13\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_13.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_14\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_14.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_15\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_15.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_16\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_16.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_17\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_17.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_18\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_18.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_19\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_19.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_2\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_2.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_20\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_20.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_21\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_21.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_3\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_3.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_4\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_4.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_5\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_5.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_6\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_6.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_7\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_7.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_8\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_8.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_9\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_API_LIST_9.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_MFA\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_PRINCIPAL_ID\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_PRINCIPAL_ID.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_0\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_0.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_1\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_1.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_2\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_REGION_LIST_2.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_CT_User_0_USERNAME\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_CT_User_0_USERNAME.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_Region_0_ACCOUNT_LIST_0\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_Region_0_ACCOUNT_LIST_0.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_Region_0_ACCOUNT_LIST_1\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_Region_0_ACCOUNT_LIST_1.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_Region_0_REGION\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_Region_0_REGION.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_Resource_0_NAME\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_Resource_0_NAME.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_Resource_0_VALUE\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_Resource_0_VALUE.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_SourceIpAddress_0_CITY\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_SourceIpAddress_0_CITY.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_SourceIpAddress_0_COUNTRY\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_SourceIpAddress_0_COUNTRY.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_SourceIpAddress_0_IP_ADDRESS\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_SourceIpAddress_0_IP_ADDRESS.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_entity_map_SourceIpAddress_0_REGION\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_entity_map_SourceIpAddress_0_REGION.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_actor\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_actor.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_category\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_category.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_id\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_id.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_model\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_model.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_name.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_event_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_event_type.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_link\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_link.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_severity\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_severity.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_source\",\"type\":\"string\",\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_source.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"lacework_summary\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"lacework_summary.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"start_time\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
+      }
+    },
+    {
+      "id": "dde00960-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "AWS_CIS*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"AWS_CIS*\"\n  },\n  \"filter\": []\n}"
+        }
+      }
+    },
+    {
+      "id": "082f4b50-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "LW_S3*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"LW_S3_*\"\n  },\n  \"filter\": [\n    {\n      \"$state\": {\n        \"store\": \"appState\"\n      },\n      \"meta\": {\n        \"alias\": null,\n        \"disabled\": false,\n        \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n        \"key\": \"lacework_event_category\",\n        \"negate\": false,\n        \"params\": {\n          \"query\": \"Compliance\",\n          \"type\": \"phrase\"\n        },\n        \"type\": \"phrase\",\n        \"value\": \"Compliance\"\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_event_category\": {\n            \"query\": \"Compliance\",\n            \"type\": \"phrase\"\n          }\n        }\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "id": "1dcb8550-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "LW_AWS_GENERAL*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"LW_AWS_GENERAL*\"\n  },\n  \"filter\": [\n    {\n      \"$state\": {\n        \"store\": \"appState\"\n      },\n      \"meta\": {\n        \"alias\": null,\n        \"disabled\": false,\n        \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n        \"key\": \"lacework_event_category\",\n        \"negate\": false,\n        \"params\": {\n          \"query\": \"Compliance\",\n          \"type\": \"phrase\"\n        },\n        \"type\": \"phrase\",\n        \"value\": \"Compliance\"\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_event_category\": {\n            \"query\": \"Compliance\",\n            \"type\": \"phrase\"\n          }\n        }\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "id": "910c3870-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 5,
+      "attributes": {
+        "title": "LW_AWS_NETWORKING*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"LW_AWS_NETWORKING*\"\n  },\n  \"filter\": []\n}"
+        }
+      }
+    },
+    {
+      "id": "81e807c0-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "LW_AWS_IAM*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"LW_AWS_IAM*\"\n  },\n  \"filter\": []\n}"
+        }
+      }
+    },
+    {
+      "id": "fd031350-6f1e-11e9-beee-e3bd9c9d6b0a",
+      "type": "search",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 2,
+      "attributes": {
+        "title": "LW_AWS_SERVERLESS*",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          "start_time",
+          "desc"
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"LW_AWS_SERVERLESS*\"\n  },\n  \"filter\": [\n    {\n      \"$state\": {\n        \"store\": \"appState\"\n      },\n      \"meta\": {\n        \"alias\": null,\n        \"disabled\": false,\n        \"index\": \"769e7730-6f34-11e9-beee-e3bd9c9d6b0a\",\n        \"key\": \"lacework_event_category\",\n        \"negate\": false,\n        \"params\": {\n          \"query\": \"Compliance\",\n          \"type\": \"phrase\"\n        },\n        \"type\": \"phrase\",\n        \"value\": \"Compliance\"\n      },\n      \"query\": {\n        \"match\": {\n          \"lacework_event_category\": {\n            \"query\": \"Compliance\",\n            \"type\": \"phrase\"\n          }\n        }\n      }\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "id": "e7bcdf30-6f37-11e9-beee-e3bd9c9d6b0a",
+      "type": "dashboard",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 10,
+      "attributes": {
+        "title": "Lacework",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"embeddableConfig\":{\"vis\":{\"colors\":{\"Alerts\":\"#64B0C8\"}}},\"gridData\":{\"x\":0,\"y\":16,\"w\":48,\"h\":12,\"i\":\"1\"},\"id\":\"7566f6b0-6f36-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"1\":\"#64B0C8\",\"2\":\"#F4D598\",\"3\":\"#EAB839\",\"4\":\"#EF843C\",\"5\":\"#BF1B00\"},\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":28,\"w\":12,\"h\":12,\"i\":\"2\"},\"id\":\"088e03c0-6f37-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"Count\":\"#447EBC\"},\"legendOpen\":false}},\"gridData\":{\"x\":12,\"y\":28,\"w\":19,\"h\":12,\"i\":\"3\"},\"id\":\"bc631d00-6f36-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":9,\"w\":7,\"h\":7,\"i\":\"4\"},\"id\":\"cc0f25e0-6f37-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"4\",\"title\":\"CIS Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":7,\"y\":9,\"w\":7,\"h\":7,\"i\":\"5\"},\"id\":\"2a042bd0-6f3f-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"5\",\"title\":\"S3 Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":14,\"y\":9,\"w\":7,\"h\":7,\"i\":\"6\"},\"id\":\"5cbe29e0-6f3f-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"6\",\"title\":\"AWS General Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":28,\"y\":9,\"w\":7,\"h\":7,\"i\":\"7\"},\"id\":\"d7d8ea80-6f43-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"7\",\"title\":\"Networking Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":21,\"y\":9,\"w\":7,\"h\":7,\"i\":\"8\"},\"id\":\"b69bc840-6f45-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"8\",\"title\":\"IAM Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":35,\"y\":9,\"w\":7,\"h\":7,\"i\":\"9\"},\"id\":\"cc4b6330-6f45-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"9\",\"title\":\"Serverless Violations\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":31,\"y\":28,\"w\":17,\"h\":12,\"i\":\"10\"},\"id\":\"a9373700-6f47-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"columns\":[\"lacework_event_name\",\"lacework_summary\",\"lacework_severity\",\"lacework_link\"]},\"gridData\":{\"x\":0,\"y\":59,\"w\":48,\"h\":14,\"i\":\"11\"},\"id\":\"d9d32e50-6f0b-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"11\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{\"columns\":[\"lacework_event_name\",\"lacework_summary\",\"lacework_event_id\",\"lacework_severity\",\"lacework_link\"]},\"gridData\":{\"x\":0,\"y\":73,\"w\":48,\"h\":21,\"i\":\"12\"},\"id\":\"52766170-6f1f-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"12\",\"type\":\"search\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":42,\"y\":9,\"w\":6,\"h\":7,\"i\":\"13\"},\"id\":\"ce287aa0-6fd4-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":40,\"w\":24,\"h\":19,\"i\":\"14\"},\"id\":\"305a5600-6fd3-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":40,\"w\":24,\"h\":19,\"i\":\"15\"},\"id\":\"d66b0030-6fd3-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"version\":\"6.4.2\"},{\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":9,\"i\":\"16\"},\"version\":\"6.4.2\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"id\":\"7a3291f0-70ca-11e9-beee-e3bd9c9d6b0a\",\"embeddableConfig\":{}}]",
+        "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Bridgecrew S3 access role",
+  "Mappings": {
+    "BridgecrewEnvironment": {
+      "env": {
+        "organizationID": "<ORGANIZATION_ID>",
+        "SnsNameForConfirmCustomerDeployment": "<SNS_NAME>"
+      }
+    }
+  },
+  "Metadata": {
+    "AWS::CloudFormation::Interface": {
+      "ParameterGroups": [
+        {
+          "Parameters": [
+            "ExternalID",
+            "BucketName"
+          ]
+        }
+      ],
+      "ParameterLabels": {
+        "BucketName": {
+          "default": "Bucket name"
+        },
+        "ExternalID": {
+          "default": "External ID"
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "BucketName": {
+      "Description": "The name of the bucket the to allow access to.",
+      "Type": "String",
+      "MinLength": "2",
+      "MaxLength": "1224",
+      "AllowedPattern": "[a-zA-Z0-9\\-\\.]*"
+    },
+    "ExternalID": {
+      "Description": "The cross-account access role created by the stack will use this value for its ExternalID.",
+      "Type": "String",
+      "MinLength": "2",
+      "MaxLength": "1224",
+      "AllowedPattern": "[\\w+=,.@:\\/-]*",
+      "ConstraintDescription": "Invalid ExternalID value.  Must match pattern [\\w+=,.@:\\/-]*"
+    }
+  },
+  "Conditions": {},
+  "Resources": {
+    "BridgecrewS3CrossAccountAccessRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": "bridgecrew-s3-read",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:iam::",
+                      {
+                        "Fn::FindInMap": [
+                          "BridgecrewEnvironment",
+                          "env",
+                          "organizationID"
+                        ]
+                      },
+                      ":root"
+                    ]
+                  ]
+                }
+              },
+              "Condition": {
+                "StringEquals": {
+                  "sts:ExternalId": {
+                    "Ref": "ExternalID"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "BridgecrewCWSPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "BridgecrewCWSPolicy",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AccessLogFiles",
+              "Action": [
+                "s3:GetObject",
+                "s3:HeadBucket",
+                "s3:ListBucket"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "BucketName"
+                      },
+                      "/*"
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "BucketName"
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Roles": [
+          {
+            "Ref": "BridgecrewS3CrossAccountAccessRole"
+          }
+        ]
+      }
+    },
+    "BridgecrewSnsCustomResource": {
+      "Type": "Custom::BridgecrewSnsCustomResource",
+      "Properties": {
+        "Type": "AWS_CT_CFG",
+        "ServiceToken": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:sns:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Fn::FindInMap": [
+                  "BridgecrewEnvironment",
+                  "env",
+                  "organizationID"
+                ]
+              },
+              ":",
+              {
+                "Fn::FindInMap": [
+                  "BridgecrewEnvironment",
+                  "env",
+                  "SnsNameForConfirmCustomerDeployment"
+                ]
+              }
+            ]
+          ]
+        },
+        "IntegrationName": "S3-read-access",
+        "CrossAccountRoleArn": {
+          "Fn::GetAtt": [
+            "BridgecrewS3CrossAccountAccessRole",
+            "Arn"
+          ]
+        },
+        "ExternalId": {
+          "Ref": "ExternalID"
+        },
+        "Account": "bridgecrew",
+        "BucketName": {
+          "Ref": "BucketName"
+        },
+        "TemplateVersion": "1.0",
+        "AWSAccountId": {
+          "Ref": "AWS::AccountId"
+        },
+        "ActionType": "GrantS3Access"
+      },
+      "DependsOn": [
+        "BridgecrewCWSPolicy"
+      ]
+    }
+  },
+  "Outputs": {
+    "RoleARN": {
+      "Description": "Cross-account access role ARN to share with Bridgecrew for S3 access",
+      "Value": {
+        "Fn::GetAtt": [
+          "BridgecrewS3CrossAccountAccessRole",
+          "Arn"
+        ]
+      }
+    },
+    "ExternalID": {
+      "Description": "ExternalID to share with Bridgecrew for CloudTrail integration",
+      "Value": {
+        "Ref": "ExternalID"
+      }
+    },
+    "TemplateVersion": {
+      "Description": "Bridgecrew.io template version",
+      "Value": "1.0.0"
+    }
+  }
+}

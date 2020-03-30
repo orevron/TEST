@@ -1,0 +1,39 @@
+{
+  "version": "6.4.2",
+  "objects": [
+    {
+      "id": "ca9eb390-70c4-11e9-beee-e3bd9c9d6b0a",
+      "type": "visualization",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 3,
+      "attributes": {
+        "title": "Welcome!",
+        "visState": "{\"title\":\"Welcome!\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"openLinksInNewTab\":false,\"markdown\":\"# BridgeCrew\\n\\nBridgeCrew is a cloud-native security platform for AWS. \\n\\nWe have assembled best-of-breed commercial and open source cloud-security technology to identify and investigate risks and threats to AWS environments.\\n\\n### Getting Started\\nWe are currently utilizing Kibana, the data visualization plugin for Elasticsearch to expose some of the valuable findings  we were able to collect. We've also went ahead and built dashboards and visualizations to streamline the prioritization and investigation process. \\n\\n\\nYou can use Kibana to continue and explore threats and compliance-violations, perform a root-cause-analysis and define monitoring jobs.\\n\\n### BridgeCrew Dashboards \\n[Lacework Overview](#/dashboard/e7bcdf30-6f37-11e9-beee-e3bd9c9d6b0a?_g=(refreshInterval:(pause:!t,value:0),time:(from:now-7d,mode:quick,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(vis:(colors:(Alerts:%2364B0C8))),gridData:(h:12,i:'1',w:48,x:0,y:0),id:'7566f6b0-6f36-11e9-beee-e3bd9c9d6b0a',panelIndex:'1',type:visualization,version:'6.4.2'),(embeddableConfig:(vis:(colors:('1':%2364B0C8,'2':%23F4D598,'3':%23EAB839,'4':%23EF843C,'5':%23BF1B00),legendOpen:!f)),gridData:(h:12,i:'2',w:12,x:0,y:19),id:'088e03c0-6f37-11e9-beee-e3bd9c9d6b0a',panelIndex:'2',type:visualization,version:'6.4.2'),(embeddableConfig:(vis:(colors:(Count:%23447EBC),legendOpen:!f)),gridData:(h:12,i:'3',w:19,x:12,y:19),id:bc631d00-6f36-11e9-beee-e3bd9c9d6b0a,panelIndex:'3',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'4',w:7,x:0,y:12),id:cc0f25e0-6f37-11e9-beee-e3bd9c9d6b0a,panelIndex:'4',title:'CIS%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'5',w:7,x:7,y:12),id:'2a042bd0-6f3f-11e9-beee-e3bd9c9d6b0a',panelIndex:'5',title:'S3%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'6',w:7,x:14,y:12),id:'5cbe29e0-6f3f-11e9-beee-e3bd9c9d6b0a',panelIndex:'6',title:'AWS%20General%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'7',w:7,x:28,y:12),id:d7d8ea80-6f43-11e9-beee-e3bd9c9d6b0a,panelIndex:'7',title:'Networking%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'8',w:7,x:21,y:12),id:b69bc840-6f45-11e9-beee-e3bd9c9d6b0a,panelIndex:'8',title:'IAM%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'9',w:7,x:35,y:12),id:cc4b6330-6f45-11e9-beee-e3bd9c9d6b0a,panelIndex:'9',title:'Serverless%20Violations',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:12,i:'10',w:17,x:31,y:19),id:a9373700-6f47-11e9-beee-e3bd9c9d6b0a,panelIndex:'10',type:visualization,version:'6.4.2'),(embeddableConfig:(columns:!(lacework_event_name,lacework_summary,lacework_severity,lacework_link)),gridData:(h:14,i:'11',w:48,x:0,y:50),id:d9d32e50-6f0b-11e9-beee-e3bd9c9d6b0a,panelIndex:'11',type:search,version:'6.4.2'),(embeddableConfig:(columns:!(lacework_event_name,lacework_summary,lacework_event_id,lacework_severity,lacework_link)),gridData:(h:21,i:'12',w:48,x:0,y:64),id:'52766170-6f1f-11e9-beee-e3bd9c9d6b0a',panelIndex:'12',type:search,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'13',w:6,x:42,y:12),id:ce287aa0-6fd4-11e9-beee-e3bd9c9d6b0a,panelIndex:'13',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:19,i:'14',w:24,x:24,y:31),id:'305a5600-6fd3-11e9-beee-e3bd9c9d6b0a',panelIndex:'14',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:19,i:'15',w:24,x:0,y:31),id:d66b0030-6fd3-11e9-beee-e3bd9c9d6b0a,panelIndex:'15',type:visualization,version:'6.4.2')),query:(language:lucene,query:''),timeRestore:!f,title:Lacework,viewMode:view)) || Lacework is a SaaS platform that provides automated threat defense, intrusion detection, and compliance for multicloud workloads & containers.\\n\\n[CloudTrail Investigation](#/dashboard/f42ba2f0-6f2e-11e9-beee-e3bd9c9d6b0a?_g=(refreshInterval:(pause:!t,value:0),time:(from:now-7d,mode:quick,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:11,i:'1',w:35,x:13,y:7),id:'62665020-6f2b-11e9-beee-e3bd9c9d6b0a',panelIndex:'1',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:18,i:'2',w:13,x:0,y:0),id:'13125ca0-6f2e-11e9-beee-e3bd9c9d6b0a',panelIndex:'2',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'3',w:8,x:31,y:0),id:b6087d30-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'3',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'4',w:9,x:13,y:0),id:'097cee10-6f2b-11e9-beee-e3bd9c9d6b0a',panelIndex:'4',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'5',w:9,x:39,y:0),id:cb2722c0-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'5',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:7,i:'6',w:9,x:22,y:0),id:eb4ca890-6f2a-11e9-beee-e3bd9c9d6b0a,panelIndex:'6',type:visualization,version:'6.4.2'),(embeddableConfig:(),gridData:(h:13,i:'7',w:48,x:0,y:18),id:'08e844a0-6f2a-11e9-beee-e3bd9c9d6b0a',panelIndex:'7',type:search,version:'6.4.2')),query:(language:lucene,query:''),timeRestore:!f,title:'Investigate%20CloudTrail',viewMode:view)) || AWS CloudTrail allows you track and automatically respond to account activity threatening the security of your AWS resources.\\n\\n\\n### Kibana Features\\n\\n[Discover](#/discover?) || Perform complex investigations using a simplified search-based query engine.\\n\\n[Visualize](#/visualize?) || Create and save graphs and charts to visualize complex data sets.\\n\\n[Dashboard](#/dashboard?) || Quickly develop comprehensive monitoring dashboards using a drag-and-drop interface.\\n\\n\\n## Contact Us\\nFeel free to ping us at [support@bridgecrew.io](mailto:support@bridgecrew.io)\"},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }
+    },
+    {
+      "id": "d9d88f20-70c4-11e9-beee-e3bd9c9d6b0a",
+      "type": "dashboard",
+      "updated_at": "2019-05-12T07:07:07.180Z",
+      "version": 3,
+      "attributes": {
+        "title": "BridgeCrew : Getting Started",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":29,\"i\":\"1\"},\"id\":\"ca9eb390-70c4-11e9-beee-e3bd9c9d6b0a\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.4.2\"}]",
+        "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+        }
+      }
+    }
+  ]
+}

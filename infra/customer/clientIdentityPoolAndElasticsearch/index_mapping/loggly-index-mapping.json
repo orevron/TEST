@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "type": {
+      "dynamic_templates": [
+        {
+          "event_data": {
+            "mapping": {
+              "type": "text"
+            },
+            "path_match": "event.json.*"
+          }
+        }
+      ],
+      "properties": {
+        "event": {
+          "enabled": false,
+          "type": "object"
+        }
+      }
+    }
+  }
+}
